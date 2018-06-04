@@ -2,4 +2,3 @@
 out/
 *~
 cabal.config
-*.cabal
