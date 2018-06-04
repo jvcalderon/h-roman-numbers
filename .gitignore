@@ -1,0 +1,5 @@
+.stack-work/
+out/
+*~
+cabal.config
+*.cabal
