@@ -18,5 +18,5 @@ before_install:
 - stack config set system-ghc --global true
 - export PATH=/opt/ghc/8.2.2/bin:$PATH
 
-script:
+install:
     - travis_wait stack --no-terminal --skip-ghc-check test
