@@ -12,7 +12,11 @@ before_install:
 - export PATH=$HOME/.local/bin:$PATH
 - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 
-script: stack --no-terminal --install-ghc test --haddock
+script: stack --no-terminal --install-ghc test --haddock --coverage
+
+after_script:
+- travis_retry curl -L https://github.com/rubik/stack-hpc-coveralls/releases/download/v0.0.4.0/shc-linux-x64-7.10.3.tar.bz2 | tar -xj
+- ./shc roman-numbers roman-numbers-test
 
 cache:
   directories:
